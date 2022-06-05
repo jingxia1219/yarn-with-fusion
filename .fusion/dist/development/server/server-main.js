@@ -847,9 +847,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("react/jsx-dev-runtime");
-/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("./src/components/style.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("react/jsx-dev-runtime");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/user/Desktop/fusion-tutorial/src/components/root.js";
+
 
 
 
@@ -869,58 +871,26 @@ const Root = () => {
     setInput(e.currentTarget.value);
   }
 
-  return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)("style", {
-      children: `
-            body{
-                background-color: #f5f5f5;
-                front: 24x 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            }
-            h1{
-                color: rgba(175, 47, 47, 0.15);
-                font-size: 100px;
-                font-weight: 100;
-                text-align:center;
-            }
-            .container {
-                background:#ffffff;
-                border: 1px solid #ededed;
-                margin: 0 auto;
-                width: 550px;
-            }
-            input {
-                border:none;
-                font-size:24px;
-                font-weight: 300;
-                padding:15px;
-                width: 520px;
-            }
-            input::placeholder {
-                color: #e6e6e6;
-                font-style:italic;
-                font-weight:100;
-            }
-            .todo{
-                border-top:1px solid #ededed;
-                padding: 15px;
-            }
-            .todo-text {
-                font-weight: 300;
-            }
-            `
-    }, void 0, false, {
+  function deleteHandler(e) {
+    setTodos(prev => prev.filter((todo, idx) => {
+      return idx !== +e.target.id;
+    }));
+  }
+
+  return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(_style__WEBPACK_IMPORTED_MODULE_1__["default"], {}, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 28,
       columnNumber: 9
-    }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)("h1", {
+    }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("h1", {
       children: "todos"
     }, void 0, false, {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 29,
       columnNumber: 13
-    }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)("div", {
+    }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("div", {
       className: "container",
-      children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)("input", {
+      children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("input", {
         onChange: changeHandler,
         onKeyDown: keyDownHandler,
         placeholder: "What needs to be done?",
@@ -928,38 +898,115 @@ const Root = () => {
         type: "text"
       }, void 0, false, {
         fileName: _jsxFileName,
-        lineNumber: 62,
+        lineNumber: 31,
         columnNumber: 17
-      }, undefined), todos.map(item => {
-        return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)("div", {
+      }, undefined), todos.map((item, idx) => {
+        return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("div", {
           className: "todo",
-          children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("div", {
             className: "todo-text",
             children: item
           }, void 0, false, {
             fileName: _jsxFileName,
-            lineNumber: 71,
+            lineNumber: 41,
             columnNumber: 29
-          }, undefined)
-        }, void 0, false, {
+          }, undefined), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("div", {
+            id: idx,
+            className: "delete-x",
+            onClick: deleteHandler,
+            children: " x "
+          }, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 44,
+            columnNumber: 29
+          }, undefined)]
+        }, idx, true, {
           fileName: _jsxFileName,
-          lineNumber: 70,
+          lineNumber: 39,
           columnNumber: 32
         }, undefined);
       })]
     }, void 0, true, {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 30,
       columnNumber: 13
     }, undefined)]
   }, void 0, true);
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxDEV)(Root, {}, void 0, false, {
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(Root, {}, void 0, false, {
   fileName: _jsxFileName,
-  lineNumber: 82,
+  lineNumber: 53,
   columnNumber: 16
 }, undefined));
+
+/***/ }),
+
+/***/ "./src/components/style.js":
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Style)
+/* harmony export */ });
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("react/jsx-dev-runtime");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/user/Desktop/fusion-tutorial/src/components/style.js";
+
+function Style() {
+  return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("style", {
+    children: `
+    body{
+        background-color: #f5f5f5;
+        front: 24x 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    h1{
+        color: rgba(175, 47, 47, 0.15);
+        font-size: 100px;
+        font-weight: 100;
+        text-align:center;
+    }
+    .container {
+        background:#ffffff;
+        border: 1px solid #ededed;
+        margin: 0 auto;
+        width: 550px;
+    }
+    input {
+        border:none;
+        font-size:24px;
+        font-weight: 300;
+        padding:15px;
+        width: 520px;
+    }
+    input::placeholder {
+        color: #e6e6e6;
+        font-style:italic;
+        font-weight:100;
+    }
+    .todo{
+        border-top:1px solid #ededed;
+        padding: 15px;
+    }
+    .todo-text {
+        font-weight: 300;
+    }
+    .todo{
+        width:520px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .delete-x{
+        cursor: pointer;
+    }
+    `
+  }, void 0, false, {
+    fileName: _jsxFileName,
+    lineNumber: 3,
+    columnNumber: 5
+  }, this);
+}
 
 /***/ }),
 
