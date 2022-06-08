@@ -1,14 +1,28 @@
-import React, {useState} from 'react';
-import Style from './style'
+import React, {useState, useEffect} from 'react';
+import Style from './style';
+import fetch from 'isomorphic-fetch';
 
 const Root = () => {
     const [todos, setTodos] = useState([]);
     const [input, setInput] = useState('');
 
+    useEffect(()=> {
+        fetch('/api/todos').then( res => res.json().then( res=> setTodos(res)))}
+    ,[] )
+
     function keyDownHandler(e){
         if(e.key === 'Enter'){
             setInput('');
             setTodos(prev => [...prev,input])
+            fetch('/api/todos',{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json',
+                },
+                body: JSON.stringify({
+                    value:input
+                })
+            })
         }
     }
 
@@ -23,6 +37,7 @@ const Root = () => {
         }
             ))
     }
+    
     return (
         <>
         <Style/>
